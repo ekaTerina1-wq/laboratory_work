@@ -11,12 +11,15 @@
 def make_initials(text):
     text = text.strip()
     if text == "":
-        return ""
+        return "Введите текст" #Обработка пустого текста
     words = text.split()
+    text2 = ""
     result = ""
     for word in words:
         result += word[0].upper()
-    return result
-print(make_initials("отдел контроля качества"))
+        text2 += " "+ word[0].upper() + word[1:]
+    return result + "|" + text2
+print(make_initials("отдел контроля качества"))  # ОКК | Отдел Контроля Качества
 print(make_initials(" "))
 print(make_initials(" организация     объединенных наций   "))
+print(make_initials("  европейский высший цифровых технологий и предпринимательства"))
